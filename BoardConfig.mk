@@ -36,6 +36,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+
 TARGET_PREBUILT_KERNEL := device/samsung/lt03wifiue/kernAl
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
@@ -64,4 +66,3 @@ TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic"
 TW_CRYPTO_FS_FLAGS := "0x00000406"
 TW_CRYPTO_KEY_LOC := "footer"
-TW_NO_RTC := true

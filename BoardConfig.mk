@@ -12,7 +12,7 @@ TARGET_BOARD_PLATFORM := smdk4x12
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DSUPPRESS_SECURE_DISCARD
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 
 
 # Architecture
 TARGET_CPU_VARIANT := cortex-a15
@@ -45,6 +45,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/lt03wifiue/kernAl
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # TWRP specific build flags
 DEVICE_RESOLUTION := 2560x1600
@@ -65,3 +66,4 @@ TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,discard,journal_as
 TW_CRYPTO_FS_FLAGS := "0x00000406"
 TW_CRYPTO_KEY_LOC := "footer"
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/lt03wifiue/custombootimg.mk
+TW_MTP_DEVICE := /dev/usb_mtp_gadget

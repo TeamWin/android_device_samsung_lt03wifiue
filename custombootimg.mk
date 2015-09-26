@@ -4,9 +4,9 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
 	@echo ----- Creating ramdisk ------
-	chmod 644 out/target/product/lt03wifiue/recovery/root/init.rc
-	chmod 644 out/target/product/lt03wifiue/recovery/root/default.prop
-	(cd out/target/product/lt03wifiue/recovery/root/ && find * | sort | cpio -o -H newc) | gzip > $(recovery_ramdisk)
+	chmod 644 out/target/product/lt033g/recovery/root/init.rc
+	chmod 644 out/target/product/lt033g/recovery/root/default.prop
+	(cd out/target/product/lt033g/recovery/root/ && find * | sort | cpio -o -H newc) | gzip -9 > $(recovery_ramdisk)
 	@echo ----- Making recovery image ------
 	$(MKBOOTIMG_BIN) --kernel $(TARGET_PREBUILT_KERNEL) --ramdisk $(recovery_ramdisk) --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	@echo ----- Made recovery image -------- $@

@@ -54,6 +54,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 
 # TWRP specific build flags
+TW_DISABLE_DOUBLE_BUFFERING := true
 TW_NEW_ION_HEAP := true
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/lt03wifiue/kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/lt03wifiue/custombootimg.mk
